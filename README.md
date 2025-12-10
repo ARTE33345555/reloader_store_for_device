@@ -16,6 +16,8 @@ ios clinet
 
 cydia changed apps store old
 
+use c and h and swift
+ 
 
 windows clinet
 
