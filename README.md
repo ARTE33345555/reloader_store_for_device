@@ -33,5 +33,3 @@ ovi store changed
 
 
 
-
-Click on this text to enter the "wiki".
