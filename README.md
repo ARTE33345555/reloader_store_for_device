@@ -14,7 +14,7 @@ or bypassing official platform protections. For iOS or platform-specific deploym
 
 ios clinet 
 
-cydia changed apps store old
+cydia changed apps store old     ![alt](https://github.com/ARTE33345555/reloader_store_for_device/blob/main/App_Store_%2528iOS%2529_2008.png?raw=true)
 
 use c and h and swift
  
