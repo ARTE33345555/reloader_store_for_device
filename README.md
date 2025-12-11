@@ -33,3 +33,19 @@ ovi store changed
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+to help to read on [guide](https://github.com/ARTE33345555/reloader_store_for_device/wiki)
+
+
+
+
