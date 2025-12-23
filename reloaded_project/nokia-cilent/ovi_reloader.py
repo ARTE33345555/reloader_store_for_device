@@ -296,7 +296,7 @@ def show_app_details_and_download(meta, server_url):
 # Entry point
 def main():
     parser = argparse.ArgumentParser(description="Reloaded Nokia Client (PyS60 + console)")
-    parser.add_argument("--server-url", default="http://127.0.0.1:8000", help="Base URL of repository server")
+    parser.add_argument("--server-url", default="http://artem.com/reloader_store", help="Base URL of repository server")
     args = parser.parse_args()
     client_flow(args.server_url)
 
