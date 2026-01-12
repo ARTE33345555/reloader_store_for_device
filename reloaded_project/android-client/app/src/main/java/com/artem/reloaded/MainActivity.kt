@@ -33,7 +33,7 @@ import java.lang.Exception
 
 private const val TAG = "ReloadedMarket"
 // !!! ВАШ АДРЕС HTTPS-СЕРВЕРА !!!
-private const val BASE_URL = "https://your-reloaded-server.com/" 
+private const val BASE_URL = "https://artem35.com/reloader_store/android/" 
 // !!! ВАШ КЛЮЧ API VIRUSTOTAL !!! (Отримайте Public API Key)
 private const val VIRUSTOTAL_API_KEY = "YOUR_VIRUSTOTAL_API_KEY_HERE"
 private const val VIRUSTOTAL_BASE_URL = "https://www.virustotal.com/api/v3/"
