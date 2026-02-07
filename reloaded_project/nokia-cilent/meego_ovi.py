@@ -1,14 +1,7 @@
 import os
 import time
 from libusb1 import usb1
-
-# Simple CLI progress bar
-def progress_bar(current, total, bar_length=30):
-    fraction = current / total
-    arrow = '#' * int(fraction * bar_length)
-    padding = '-' * (bar_length - len(arrow))
-    end_char = '\r' if current < total else '\n'
-    print(f'Progress: [{arrow}{padding}] {int(fraction*100)}%', end=end_char)
+from tqdm import tqdm  # pip install tqdm
 
 # List connected USB devices
 def list_usb_devices():
@@ -18,17 +11,15 @@ def list_usb_devices():
             print(f"Bus {device.getBusNumber():03d} Device {device.getDeviceAddress():03d} "
                   f"ID {device.getVendorID():04x}:{device.getProductID():04x}")
 
-# Copy file with CLI progress bar
+# Copy file with tqdm progress bar
 def copy_file(src, dst):
     total_size = os.path.getsize(src)
-    copied = 0
     buffer_size = 4096
 
-    with open(src, 'rb') as fsrc, open(dst, 'wb') as fdst:
+    with open(src, 'rb') as fsrc, open(dst, 'wb') as fdst, tqdm(total=total_size, unit='B', unit_scale=True, desc="Installing") as pbar:
         while chunk := fsrc.read(buffer_size):
             fdst.write(chunk)
-            copied += len(chunk)
-            progress_bar(copied, total_size)
+            pbar.update(len(chunk))
             time.sleep(0.01)  # simulate transfer speed
 
 # Confirmation prompt (y/n)
@@ -58,7 +49,7 @@ def main():
         with open(src_file, 'wb') as f:
             f.write(os.urandom(1024*1024))  # 1 MB
     
-    print("Installing Reloaded Store...")
+    # Copy with tqdm progress
     copy_file(src_file, dst_file)
     
     print("Installation completed successfully!")
